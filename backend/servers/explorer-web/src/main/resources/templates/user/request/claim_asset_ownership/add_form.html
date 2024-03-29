@@ -13,7 +13,7 @@
         <div class="mx-auto max-w-2xl text-center space-y-3">
 
             <!--/* Page header. */-->
-            <h2 class="pageHeader" th:text="#{request.view.claimAssetOwnership.title}"></h2>
+            <h2 class="pageTitle" th:text="#{request.view.claimAssetOwnership.title}"></h2>
             <hr>
 
             <form method="post" th:action="@{/account/request/claim_asset_ownership/add}" th:object="${command}">

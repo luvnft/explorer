@@ -22,15 +22,15 @@
                 </div>
 
                 <div>
-                    <h2 class="pageHeader" th:text="${user.username}" th:if="${#strings.isEmpty(user.fullName)}"></h2>
-                    <h2 class="pageHeader" th:text="${user.fullName}" th:if="${!#strings.isEmpty(user.fullName)}"></h2>
+                    <h2 class="pageTitle" th:text="${user.username}" th:if="${#strings.isEmpty(user.fullName)}"></h2>
+                    <h2 class="pageTitle" th:text="${user.fullName}" th:if="${!#strings.isEmpty(user.fullName)}"></h2>
                     <p><a th:href="${user.website}" th:text="${user.website}" th:target="${user.username}"
                           class="link"></a>
                     </p>
                 </div>
 
             </div>
-            <p class="pageHeaderSubtitle" th:text="${user.biography}" th:if="${user.biography != null}"></p>
+            <p class="pageSubTitle" th:text="${user.biography}" th:if="${user.biography != null}"></p>
             <hr>
 
             <!--/* Assets list. */-->

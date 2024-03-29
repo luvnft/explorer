@@ -22,9 +22,7 @@ import static org.royllo.explorer.web.util.constants.RequestPageConstants.ADD_PR
 @RequiredArgsConstructor
 public class AddProofRequestController {
 
-    /**
-     * Request service.
-     */
+    /** Request service. */
     private final RequestService requestService;
 
     /**

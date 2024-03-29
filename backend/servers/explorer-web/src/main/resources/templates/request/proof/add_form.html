@@ -1,18 +1,15 @@
 <!doctype html>
 <html lang="en"
-      layout:decorate="~{util/fragments/layouts/default/layout}"
+      layout:decorate="~{util/fragments/layouts/page/layout(title=#{request.view.proof.title},subTitle=#{request.view.proof.subTitle})}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<!--/* =========================================================================================================== */-->
 <div layout:fragment="content">
 
-    <!--/* ======================================================================================================= */-->
     <!--/* Display form */-->
-    <div class="pt-12 w-4/5 mx-auto">
-        <form method="post" th:action="@{/request/proof/add}" th:object="${command}">
+    <form method="post" th:action="@{/request/proof/add}" th:object="${command}">
 
-            <!--/* Proof field */-->
-            <label>
+        <!--/* Proof field */-->
+        <label>
                 <textarea class="w-full textarea textarea-bordered"
                           name="proof"
                           onClick="this.select();"
@@ -22,31 +19,28 @@
                           th:field="*{proof}"
                           th:placeholder="#{request.view.proof.add.helper}">
                 </textarea>
-            </label>
+        </label>
 
-            <!--/* Error messages */-->
-            <div th:each="error: ${#fields.errors('*')}"
-                 th:if="${#fields.hasErrors('proof')}">
-                <div th:insert="~{util/fragments/components/error_message :: error_message(${error})}"></div>
-            </div>
+        <!--/* Error messages */-->
+        <div th:each="error: ${#fields.errors('*')}"
+             th:if="${#fields.hasErrors('proof')}">
+            <div th:insert="~{util/fragments/components/error_message :: error_message(${error})}"></div>
+        </div>
 
-            <!--/* Submit button */-->
-            <button class="btn btn-primary mt-6"
-                    th:text="#{request.view.proof.submit}"
-                    type="submit"></button>
+        <!--/* Submit button */-->
+        <button class="btn btn-primary mt-6"
+                th:text="#{request.view.proof.submit}"
+                type="submit"></button>
 
-            <!--/* Explanation */-->
-            <div class="mockup-code mt-6">
-                <pre data-prefix="#" th:utext="#{request.view.proof.explanation.title}"></pre>
-                <pre data-prefix="$" th:utext="#{request.view.proof.explanation.code.line.1}"></pre>
-                <pre data-prefix=">" th:utext="#{request.view.proof.explanation.code.line.2}"></pre>
-                <pre data-prefix=">" th:utext="#{request.view.proof.explanation.code.line.3}"></pre>
-            </div>
+        <!--/* Explanation */-->
+        <div class="mockup-code mt-6">
+            <pre data-prefix="#" th:utext="#{request.view.proof.explanation.title}"></pre>
+            <pre data-prefix="$" th:utext="#{request.view.proof.explanation.code.line.1}"></pre>
+            <pre data-prefix=">" th:utext="#{request.view.proof.explanation.code.line.2}"></pre>
+            <pre data-prefix=">" th:utext="#{request.view.proof.explanation.code.line.3}"></pre>
+        </div>
 
-        </form>
-    </div>
-
+    </form>
 </div>
-<!--/* =========================================================================================================== */-->
 
 </html>

@@ -3,7 +3,6 @@
       layout:decorate="~{util/fragments/layouts/default/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<!--/* =========================================================================================================== */-->
 <div class="w-4/5 md:w-2/5 mx-auto" layout:fragment="content">
 
     <div class="alert shadow-lg">
@@ -16,12 +15,11 @@
             <h3 class="font-bold" th:text="#{request.message.requestCreated(${result.getRequestId()})}"></h3>
             <div class="text-s" th:utext="#{request.message.creationExplanation}"></div>
         </div>
-        <a class="btn btn-sm"
+        <a class="btn btn-primary btn-md"
            th:href="@{'/request/' + ${result.getRequestId()}}"
            th:text="#{request.view.status}"></a>
     </div>
 
 </div>
-<!--/* =========================================================================================================== */-->
 
 </html>
