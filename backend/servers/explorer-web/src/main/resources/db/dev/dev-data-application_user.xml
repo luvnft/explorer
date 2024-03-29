@@ -19,7 +19,7 @@
         </insert>
         <insert tableName="APPLICATION_USER_LNURL_AUTH_LINKING_KEY">
             <column name="ID" value="100000"/>
-            <column name="LINKING_KEY" value="03824b0e31538e83a38c985333492b7f1f420000250990a487e03e4cc928760fb3"/>
+            <column name="LINKING_KEY" value="020b7fe0cb644ffb2794c10bd8bf9ac2594824a86e6657bc50bcb69ad87bb50660"/>
             <column name="K1" value="RANDOM_K1"/>
             <column name="FK_USER_OWNER" value="2"/>
             <column name="CREATED_ON"/>

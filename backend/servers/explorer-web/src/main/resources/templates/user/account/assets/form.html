@@ -1,24 +1,12 @@
 <!doctype html>
 <html lang="en"
-      layout:decorate="~{util/fragments/layouts/default/layout}"
+      layout:decorate="~{util/fragments/layouts/page/layout(title=#{user.asset.title(${assetName})},subTitle=#{user.asset.explanation(${assetId})})}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<!--/* =========================================================================================================== */-->
 <div layout:fragment="content">
 
-    <!--/* This div is used to add a margin between the header and the content. */-->
-    <div class="px-6 py-12 sm:py-16 lg:px-8">
-
-        <!--/* This div is used to center the content. */-->
-        <div class="mx-auto max-w-2xl text-center space-y-3">
-
-            <!--/* Page header. */-->
-            <h2 class="pageTitle" th:text="#{user.asset.title(${assetName})}"></h2>
-            <p class="pageSubTitle" th:text="#{user.asset.explanation(${assetId})}"></p>
-            <hr>
-
-            <form action="#" th:action="@{/account/asset/save}" th:object="${command}" method="post">
-                <div class="space-y-3" x-data="{
+    <form action="#" th:action="@{/account/asset/save}" th:object="${command}" method="post">
+        <div class="space-y-3" x-data="{
                         assetIdAlias: '',
                         readme: '',
                         formChanged: false,
@@ -32,64 +20,60 @@
                         }
                     }">
 
-                    <input type="hidden" th:field="*{assetId}" th:value="${assetId}"/>
+            <input type="hidden" th:field="*{assetId}" th:value="${assetId}"/>
 
-                    <!--/* Asset id alias */-->
-                    <label class="form-control w-full">
-                        <div class="label">
-                            <span class="label-text" th:text="#{user.asset.assetIdAlias}"></span>
-                        </div>
-                        <input type="text" class="input input-bordered w-full" autofocus
-                               th:field="*{assetIdAlias}"
-                               x-model="assetIdAlias" x-ref="assetIdAlias" onClick="this.select();"
-                               onFocus="this.select();"/>
-                    </label>
-                    <p th:if="${#fields.hasErrors('assetIdAlias')}" class="fieldError">
+            <!--/* Asset id alias */-->
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text" th:text="#{user.asset.assetIdAlias}"></span>
+                </div>
+                <input type="text" class="input input-bordered w-full" autofocus
+                       th:field="*{assetIdAlias}"
+                       x-model="assetIdAlias" x-ref="assetIdAlias" onClick="this.select();"
+                       onFocus="this.select();"/>
+            </label>
+            <p th:if="${#fields.hasErrors('assetIdAlias')}" class="fieldError">
                     <span th:each="error : ${#fields.errors('assetIdAlias')}"
                           th:text="${error}"></span>
-                    </p>
+            </p>
 
-                    <!--/* Readme */-->
-                    <div class="text-left">
+            <!--/* Readme */-->
+            <div class="text-left">
                         <textarea id="readme" name="readme" th:field="*{readme}" x-model="readme"
                                   x-ref="readme"></textarea>
-                    </div>
-                    <p th:if="${#fields.hasErrors('readme')}" class="fieldError">
+            </div>
+            <p th:if="${#fields.hasErrors('readme')}" class="fieldError">
                     <span th:each="error : ${#fields.errors('readme')}"
                           th:text="${error}"></span>
-                    </p>
-                    <script>
-                        const easyMDE = new EasyMDE({
-                                element: document.getElementById('readme'),
-                                spellChecker: false,
-                                hideIcons: ["guide"],
-                                maxHeight: "250px",
-                            }
-                        )
-                        easyMDE.codemirror.on("change", function () {
-                            document.getElementById('submit-button').disabled = false;
-                        })
-                    </script>
+            </p>
+            <script>
+                const easyMDE = new EasyMDE({
+                        element: document.getElementById('readme'),
+                        spellChecker: false,
+                        hideIcons: ["guide"],
+                        maxHeight: "250px",
+                    }
+                )
+                easyMDE.codemirror.on("change", function () {
+                    document.getElementById('submit-button').disabled = false;
+                })
+            </script>
 
-                    <!--/* Submit button */-->
-                    <p>
-                        <a th:href="@{/account/assets}" class="btn btn-ghost">Cancel</a>
-                        &nbsp;
-                        <button class="btn btn-primary"
-                                th:text="#{user.asset.updateButton}"
-                                id="submit-button"
-                                :disabled="!formChanged"
-                                type="submit"></button>
-                    </p>
-
-                </div>
-
-            </form>
+            <!--/* Submit button */-->
+            <p>
+                <a th:href="@{/account/assets}" class="btn btn-ghost">Cancel</a>
+                &nbsp;
+                <button class="btn btn-primary"
+                        th:text="#{user.asset.updateButton}"
+                        id="submit-button"
+                        :disabled="!formChanged"
+                        type="submit"></button>
+            </p>
 
         </div>
 
-    </div>
+    </form>
 
 </div>
-<!--/* =========================================================================================================== */-->
+
 </html>

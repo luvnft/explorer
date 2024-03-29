@@ -1,41 +1,28 @@
 <!doctype html>
 <html lang="en"
-      layout:decorate="~{util/fragments/layouts/default/layout}"
+      layout:decorate="~{util/fragments/layouts/page/layout(title=#{user.settings.title},subTitle=#{user.settings.explanation})}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<!--/* =========================================================================================================== */-->
 <div layout:fragment="content">
 
-    <!--/* This div is used to add a margin between the header and the content. */-->
-    <div class="px-6 py-12 sm:py-16 lg:px-8">
+    <!--/* Account information. */-->
+    <div class="flex items-center">
+        <!--/* Icon */-->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+             stroke="currentColor" class="w-6 h-6 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+        </svg>
+        <!--/* Title */-->
+        <h3 class="text-lg font-semibold" th:text="#{user.settings.information.title}"></h3>
+    </div>
+    <p class="text-left" th:text="#{user.settings.information.explanation}"></p>
 
-        <!--/* This div is used to center the content. */-->
-        <div class="mx-auto max-w-2xl text-center space-y-3">
-
-            <!--/* Page header. */-->
-            <h2 class="pageTitle" th:text="#{user.settings.title}"></h2>
-            <p class="pageSubTitle" th:text="#{user.settings.explanation}"></p>
-            <hr>
-
-            <!--/* =============================================================================================== */-->
-            <!--/* Account information. */-->
-            <div class="flex items-center">
-                <!--/* Icon */-->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-6 h-6 mr-2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                </svg>
-                <!--/* Title */-->
-                <h3 class="text-lg font-semibold" th:text="#{user.settings.information.title}"></h3>
-            </div>
-            <p class="text-left" th:text="#{user.settings.information.explanation}"></p>
-
-            <!--/* Account settings form */-->
-            <form action="#" th:action="@{/account/settings}" th:object="${command}" method="post"
-                  enctype="multipart/form-data">
-                <div class="space-y-3"
-                     x-data="{
+    <!--/* Account settings form */-->
+    <form action="#" th:action="@{/account/settings}" th:object="${command}" method="post"
+          enctype="multipart/form-data">
+        <div class="space-y-3"
+             x-data="{
                         username: '',
                         profilePicture: '',
                         fullName: '',
@@ -58,106 +45,100 @@
                         }
                     }">
 
-                    <!--/* Username */-->
-                    <label class="form-control w-full">
-                        <div class="label">
-                            <span class="label-text" th:text="#{user.settings.information.username.label}"></span>
-                        </div>
-                        <input type="text" class="input input-bordered w-full" th:field="*{username}" x-model="username"
-                               x-ref="username" onClick="this.select();" autofocus
-                               onFocus="this.select();"/>
-                    </label>
-                    <p th:if="${#fields.hasErrors('username')}" class="fieldError">
+            <!--/* Username */-->
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text" th:text="#{user.settings.information.username.label}"></span>
+                </div>
+                <input type="text" class="input input-bordered w-full" th:field="*{username}" x-model="username"
+                       x-ref="username" onClick="this.select();" autofocus
+                       onFocus="this.select();"/>
+            </label>
+            <p th:if="${#fields.hasErrors('username')}" class="fieldError">
                     <span th:each="error : ${#fields.errors('username')}"
                           th:text="${error}"></span>
-                    </p>
+            </p>
 
-                    <!--/* Profil picture */-->
-                    <div style="display: flex; align-items: center; justify-content: start; gap: 20px;">
-                        <div class="avatar" th:if="${command.profilePictureFilename} != null">
-                            <div class="w-24 rounded-xl">
-                                <img th:src="${contentBaseUrl} + '/' + ${command.profilePictureFilename}"/>
-                            </div>
-                        </div>
-                        <label class="form-control">
-                            <div class="label">
+            <!--/* Profil picture */-->
+            <div style="display: flex; align-items: center; justify-content: start; gap: 20px;">
+                <div class="avatar" th:if="${command.profilePictureFilename} != null">
+                    <div class="w-24 rounded-xl">
+                        <img th:src="${contentBaseUrl} + '/' + ${command.profilePictureFilename}"/>
+                    </div>
+                </div>
+                <label class="form-control">
+                    <div class="label">
                                 <span class="label-text"
                                       th:text="#{user.settings.information.profilePicture.label}"></span>
-                            </div>
-                            <input type="file" class="file-input file-input-bordered w-full max-w-xs"
-                                   th:field="*{profilePicture}" x-model="profilePicture"
-                                   x-ref="profilePicture"/>
-                        </label>
                     </div>
-                    <p th:if="${#fields.hasErrors('profilePicture')}" class="fieldError">
+                    <input type="file" class="file-input file-input-bordered w-full max-w-xs"
+                           th:field="*{profilePicture}" x-model="profilePicture"
+                           x-ref="profilePicture"/>
+                </label>
+            </div>
+            <p th:if="${#fields.hasErrors('profilePicture')}" class="fieldError">
                     <span th:each="error : ${#fields.errors('profilePicture')}"
                           th:text="${error}"></span>
-                    </p>
+            </p>
 
-                    <!--/* Full name */-->
-                    <label class="form-control w-full">
-                        <div class="label">
-                            <span class="label-text" th:text="#{user.settings.information.name.label}"></span>
-                        </div>
-                        <input type="text" class="input input-bordered w-full"
-                               th:field="*{fullName}"
-                               x-model="fullName" x-ref="fullName" onClick="this.select();"
-                               onFocus="this.select();"/>
-                    </label>
-                    <p th:if="${#fields.hasErrors('fullName')}" class="fieldError"
-                       th:text="#{validation.user.fullName.length.too_long}"></p>
-
-                    <!--/* Biography */-->
-                    <label class="form-control w-full">
-                        <div class="label">
-                            <span class="label-text" th:text="#{user.settings.information.biography.label}"></span>
-                        </div>
-                        <textarea class="textarea textarea-bordered textarea-md" th:field="*{biography}"
-                                  x-model="biography" x-ref="biography" onClick="this.select();"
-                                  onFocus="this.select();"></textarea>
-                    </label>
-                    <p th:if="${#fields.hasErrors('biography')}" class="fieldError"
-                       th:text="#{validation.user.biography.length.too_long}"></p>
-
-                    <!--/* Website */-->
-                    <label class="form-control w-full">
-                        <div class="label">
-                            <span class="label-text" th:text="#{user.settings.information.website.label}"></span>
-                        </div>
-                        <input type="text" class="input input-bordered w-full" th:field="*{website}" x-model="website"
-                               x-ref="website" onClick="this.select();"
-                               onFocus="this.select();"/>
-                    </label>
-                    <ul th:if="${#fields.hasErrors('website')}" class="fieldError">
-                        <li th:each="error : ${#fields.errors('website')}" th:text="${error}"></li>
-                    </ul>
-
-                    <!--/* Successful update confirmation */-->
-                    <div role="alert" class="alert alert-success" th:if="${successfulOperation} == true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
-                             viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        <span th:text="#{user.settings.information.success}"></span>
-                    </div>
-
-                    <!--/* Submit button */-->
-                    <p>
-                        <button class="btn btn-primary" th:text="#{user.settings.information.updateButton}"
-                                :disabled="!formChanged"
-                                type="submit"></button>
-                    </p>
+            <!--/* Full name */-->
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text" th:text="#{user.settings.information.name.label}"></span>
                 </div>
+                <input type="text" class="input input-bordered w-full"
+                       th:field="*{fullName}"
+                       x-model="fullName" x-ref="fullName" onClick="this.select();"
+                       onFocus="this.select();"/>
+            </label>
+            <p th:if="${#fields.hasErrors('fullName')}" class="fieldError"
+               th:text="#{validation.user.fullName.length.too_long}"></p>
 
-            </form>
-            <!--/* =============================================================================================== */-->
+            <!--/* Biography */-->
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text" th:text="#{user.settings.information.biography.label}"></span>
+                </div>
+                <textarea class="textarea textarea-bordered textarea-md" th:field="*{biography}"
+                          x-model="biography" x-ref="biography" onClick="this.select();"
+                          onFocus="this.select();"></textarea>
+            </label>
+            <p th:if="${#fields.hasErrors('biography')}" class="fieldError"
+               th:text="#{validation.user.biography.length.too_long}"></p>
 
+            <!--/* Website */-->
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text" th:text="#{user.settings.information.website.label}"></span>
+                </div>
+                <input type="text" class="input input-bordered w-full" th:field="*{website}" x-model="website"
+                       x-ref="website" onClick="this.select();"
+                       onFocus="this.select();"/>
+            </label>
+            <ul th:if="${#fields.hasErrors('website')}" class="fieldError">
+                <li th:each="error : ${#fields.errors('website')}" th:text="${error}"></li>
+            </ul>
+
+            <!--/* Successful update confirmation */-->
+            <div role="alert" class="alert alert-success" th:if="${successfulOperation} == true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span th:text="#{user.settings.information.success}"></span>
+            </div>
+
+            <!--/* Submit button */-->
+            <p>
+                <button class="btn btn-primary" th:text="#{user.settings.information.updateButton}"
+                        :disabled="!formChanged"
+                        type="submit"></button>
+            </p>
         </div>
 
-    </div>
+    </form>
 
 </div>
-<!--/* =========================================================================================================== */-->
 
 </html>

@@ -27,8 +27,8 @@
     <div class="mx-auto max-w-2xl space-y-2">
 
         <!--/* Page header. */-->
-        <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-center" th:text="${title}"></h2>
-        <p class="mt-6 text-lg leading-8 text-gray-600 truncate text-center" th:text="${subTitle}"></p>
+        <h2 class="pageTitle" th:text="${title}"></h2>
+        <p class="pageSubTitle hidden md:block" th:text="${subTitle}"></p>
         <hr>
         <!--/* Page content. */-->
         <main id="content"
