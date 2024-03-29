@@ -3,7 +3,7 @@ package org.royllo.explorer.web.util.constants;
 import lombok.experimental.UtilityClass;
 
 /**
- * User page constants.
+ * User page.
  */
 @UtilityClass
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")

@@ -27,10 +27,10 @@ import java.io.IOException;
 
 import static org.royllo.explorer.core.util.enums.FileType.IMAGE;
 import static org.royllo.explorer.web.util.constants.AccountSettingsPageConstants.ACCOUNT_SETTINGS_PAGE;
-import static org.royllo.explorer.web.util.constants.AuthenticationSessionConstants.SHORT_USERNAME;
-import static org.royllo.explorer.web.util.constants.AuthenticationSessionConstants.USERNAME;
 import static org.royllo.explorer.web.util.constants.ModelAttributeConstants.FORM_ATTRIBUTE;
 import static org.royllo.explorer.web.util.constants.ModelAttributeConstants.SUCCESSFUL_OPERATION_ATTRIBUTE;
+import static org.royllo.explorer.web.util.constants.SessionConstants.SHORT_USERNAME;
+import static org.royllo.explorer.web.util.constants.SessionConstants.USERNAME;
 
 /**
  * Account settings.

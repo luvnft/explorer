@@ -3,7 +3,7 @@ package org.royllo.explorer.web.util.constants;
 import lombok.experimental.UtilityClass;
 
 /**
- * Account settings page constants.
+ * Account settings page.
  */
 @UtilityClass
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")

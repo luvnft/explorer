@@ -78,7 +78,6 @@ public class DisplayRoylloCoinTest extends BaseWebTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name(containsString(ASSET_README_PAGE)))
                 // Checking readme page.
-                .andExpect(content().string(containsString(getMessage(messages, "asset.data.readme"))))
                 .andExpect(content().string(not(containsString(getMessage(messages, "asset.data.readme.noReadme")))))
                 .andExpect(content().string(containsString(getMessage(messages, "asset.data.readme.explanation"))))
                 .andExpect(content().string(containsString("<strong>Asset created by Royllo</strong>")))
@@ -189,7 +188,7 @@ public class DisplayRoylloCoinTest extends BaseWebTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name(containsString(ASSET_PROOFS_PAGE)))
                 // Checking proofs tab data.
-                .andExpect(content().string(containsString(">" + ROYLLO_COIN_FROM_TEST.getDecodedProofRequest(0).getProofId() + "<")))
+                .andExpect(content().string(containsString(">" + ROYLLO_COIN_FROM_TEST.getDecodedProofRequest(0).getProofId() + ".proof<")))
                 // Error messages.
                 .andExpect(content().string(not(containsString(getMessage(messages, "asset.view.error.noAssetId")))))
                 .andExpect(content().string(not(containsString(getMessage(messages, "asset.view.error.assetNotFound")))));

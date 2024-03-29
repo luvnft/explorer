@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static org.royllo.explorer.web.util.constants.HomePagesConstants.GLOBAL_STATISTICS_ATTRIBUTE;
 import static org.royllo.explorer.web.util.constants.HomePagesConstants.HOME_PAGE;
+import static org.royllo.explorer.web.util.constants.ModelAttributeConstants.GLOBAL_STATISTICS_ATTRIBUTE;
 import static org.royllo.explorer.web.util.constants.ModelAttributeConstants.QUERY_ATTRIBUTE;
 
 /**

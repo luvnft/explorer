@@ -3,7 +3,7 @@ package org.royllo.explorer.web.util.constants;
 import lombok.experimental.UtilityClass;
 
 /**
- * Search page files.
+ * Search page.
  */
 @UtilityClass
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")

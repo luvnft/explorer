@@ -3,7 +3,7 @@ package org.royllo.explorer.web.util.constants;
 import lombok.experimental.UtilityClass;
 
 /**
- * Asset page files.
+ * Asset page.
  */
 @UtilityClass
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
@@ -12,7 +12,7 @@ public class AssetPageConstants {
     /** Asset page. */
     public static final String ASSET_PAGE = "asset/genesis";
 
-    /** Asset readme. */
+    /** Asset readme page. */
     public static final String ASSET_README_PAGE = "asset/readme";
 
     /** Asset genesis page. */

@@ -3,7 +3,7 @@ package org.royllo.explorer.web.util.constants;
 import lombok.experimental.UtilityClass;
 
 /**
- * Model attribute constants.
+ * Model attribute.
  */
 @UtilityClass
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
@@ -74,5 +74,8 @@ public class ModelAttributeConstants {
 
     /** Operation successful attribute. */
     public static final String SUCCESSFUL_OPERATION_ATTRIBUTE = "successfulOperation";
+
+    /** Global statistics constants. */
+    public static final String GLOBAL_STATISTICS_ATTRIBUTE = "globalStatistics";
 
 }

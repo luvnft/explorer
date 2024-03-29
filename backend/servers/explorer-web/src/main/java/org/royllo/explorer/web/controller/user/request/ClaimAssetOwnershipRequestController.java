@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.server.ResponseStatusException;
 
-import static org.royllo.explorer.web.util.constants.AuthenticationSessionConstants.USER_ID;
 import static org.royllo.explorer.web.util.constants.ModelAttributeConstants.FORM_ATTRIBUTE;
 import static org.royllo.explorer.web.util.constants.ModelAttributeConstants.RESULT_ATTRIBUTE;
 import static org.royllo.explorer.web.util.constants.RequestPageConstants.CLAIM_ASSET_OWNERSHIP_REQUEST_FORM_PAGE;
 import static org.royllo.explorer.web.util.constants.RequestPageConstants.CLAIM_ASSET_OWNERSHIP_REQUEST_SUCCESS_PAGE;
+import static org.royllo.explorer.web.util.constants.SessionConstants.USER_ID;
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 /**
@@ -44,7 +44,7 @@ public class ClaimAssetOwnershipRequestController {
      */
     @SuppressWarnings("SameReturnValue")
     @GetMapping("/account/request/claim_asset_ownership/add")
-    public String forms(final Model model) {
+    public String form(final Model model) {
         model.addAttribute(FORM_ATTRIBUTE, new ClaimAssetOwnershipRequestForm());
         return CLAIM_ASSET_OWNERSHIP_REQUEST_FORM_PAGE;
     }

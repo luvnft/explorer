@@ -11,10 +11,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import static org.royllo.explorer.web.util.constants.AuthenticationSessionConstants.SHORT_USERNAME;
-import static org.royllo.explorer.web.util.constants.AuthenticationSessionConstants.USERNAME;
-import static org.royllo.explorer.web.util.constants.AuthenticationSessionConstants.USER_ID;
 import static org.royllo.explorer.web.util.constants.HomePagesConstants.HOME_PAGE;
+import static org.royllo.explorer.web.util.constants.SessionConstants.SHORT_USERNAME;
+import static org.royllo.explorer.web.util.constants.SessionConstants.USERNAME;
+import static org.royllo.explorer.web.util.constants.SessionConstants.USER_ID;
 
 /**
  * Login controller.

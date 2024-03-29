@@ -3,11 +3,11 @@ package org.royllo.explorer.web.util.constants;
 import lombok.experimental.UtilityClass;
 
 /**
- * Authentication sessions constants.
+ * Sessions values.
  */
 @UtilityClass
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
-public class AuthenticationSessionConstants {
+public class SessionConstants {
 
     /** User id. */
     public static final String USER_ID = "userId";
@@ -17,6 +17,5 @@ public class AuthenticationSessionConstants {
 
     /** Short username. */
     public static final String SHORT_USERNAME = "shortUsername";
-
 
 }
