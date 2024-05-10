@@ -10,7 +10,6 @@ import org.royllo.explorer.core.repository.user.UserRepository;
 import org.royllo.explorer.core.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.tbk.lnurl.auth.K1;
 import org.tbk.lnurl.auth.LinkingKey;
 import org.tbk.lnurl.simple.auth.SimpleK1;
@@ -24,7 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.royllo.explorer.core.util.enums.UserRole.USER;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("LnurlAuthPairingService tests")
 @SuppressWarnings({"checkstyle:DesignForExtension", "unused"})
 public class LnurlAuthPairingServiceTest {

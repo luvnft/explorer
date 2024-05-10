@@ -23,7 +23,7 @@ import static org.royllo.explorer.core.util.enums.RequestStatus.SUCCESS;
 @DirtiesContext
 @ActiveProfiles("scheduler-disabled")
 @Testcontainers
-@SpringBootTest(properties = {"spring.datasource.url=jdbc:tc:postgresql:16:///explorer",
+@SpringBootTest(properties = {"spring.datasource.url=jdbc:tc:postgresql:15:///explorer",
         "spring.datasource.driver-class-name=org.testcontainers.jdbc.ContainerDatabaseDriver"})
 public class PurgeBatchTest {
 

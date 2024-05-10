@@ -21,7 +21,6 @@ import org.royllo.explorer.core.util.exceptions.bitcoin.TransactionNotFoundExcep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
-import org.springframework.test.annotation.DirtiesContext;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -66,7 +65,6 @@ import static org.royllo.test.TapdData.SET_OF_ROYLLO_NFT_3_ASSET_ID;
 import static org.royllo.test.TapdData.TRICKY_ROYLLO_COIN_ASSET_ID;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("AssetService tests")
 public class AssetServiceTest extends TestWithMockServers {
 

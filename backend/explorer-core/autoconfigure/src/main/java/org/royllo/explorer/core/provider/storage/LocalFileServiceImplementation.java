@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 
 import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.royllo.explorer.core.dto.proof.ProofDTO.PROOF_FILE_NAME_EXTENSION;
 
 /**
@@ -151,7 +151,7 @@ public class LocalFileServiceImplementation extends BaseProvider implements Cont
     protected static String sha256(final String value) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] digest = md.digest(value.getBytes(StandardCharsets.UTF_8));
+            byte[] digest = md.digest(value.getBytes(UTF_8));
             return DatatypeConverter.printHexBinary(digest).toLowerCase();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("SHA-256 is not available: " + e.getMessage());

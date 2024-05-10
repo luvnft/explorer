@@ -13,7 +13,6 @@ import org.royllo.explorer.api.graphql.generated.types.ProofPage;
 import org.royllo.explorer.core.util.base.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,7 +22,6 @@ import static org.royllo.test.TapdData.TRICKY_ROYLLO_COIN_ASSET_ID;
 import static org.royllo.test.TapdData.TRICKY_ROYLLO_COIN_FROM_TEST;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("ProofDataFetcher tests")
 public class ProofDataFetcherTest extends Base {
 

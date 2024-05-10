@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties({
+        // TODO Change all those classes to Records.œ
         // Royllo explorer configuration.
         RoylloExplorerParameters.class,
         RoylloExplorerParameters.Api.class,

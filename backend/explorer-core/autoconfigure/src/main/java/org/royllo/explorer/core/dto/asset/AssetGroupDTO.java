@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;
+import org.apache.commons.lang3.ObjectUtils;
 import org.royllo.explorer.core.dto.user.UserDTO;
 
 import static lombok.AccessLevel.PRIVATE;
@@ -44,11 +45,7 @@ public class AssetGroupDTO {
      * @return creator
      */
     public UserDTO getCreator() {
-        if (creator == null) {
-            return ANONYMOUS_USER_DTO;
-        } else {
-            return creator;
-        }
+        return ObjectUtils.firstNonNull(creator, ANONYMOUS_USER_DTO);
     }
 
 }

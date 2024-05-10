@@ -2,6 +2,7 @@ package org.royllo.explorer.web.test.controllers.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.royllo.explorer.web.test.util.BaseWebTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,11 +17,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("Analytics - Piwik tests")
 @AutoConfigureMockMvc
+@DirtiesContext
 @TestPropertySource(properties = {"royllo.explorer.analytics.piwik.trackingId=00000000-0000-0000-0000-000000000001"})
-public class AnalyticsPiwikTest {
+public class AnalyticsPiwikTest extends BaseWebTest {
 
     @Autowired
     MockMvc mockMvc;

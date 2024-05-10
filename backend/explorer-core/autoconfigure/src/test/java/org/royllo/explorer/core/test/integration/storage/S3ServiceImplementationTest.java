@@ -22,7 +22,6 @@ import org.royllo.explorer.core.test.util.TestWithMockServers;
 import org.royllo.explorer.core.util.parameters.S3Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.containers.MinIOContainer;
 
@@ -41,7 +40,6 @@ import static org.junit.jupiter.api.Assertions.fail;
  * S3 test.
  */
 @SpringBootTest
-@DirtiesContext
 @DisplayName("S3 service tests")
 @ActiveProfiles({"s3-storage"})
 public class S3ServiceImplementationTest extends TestWithMockServers {

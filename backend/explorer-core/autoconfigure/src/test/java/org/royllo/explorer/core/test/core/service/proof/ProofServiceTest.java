@@ -17,7 +17,6 @@ import org.royllo.explorer.core.util.exceptions.proof.ProofCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
-import org.springframework.test.annotation.DirtiesContext;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -43,7 +42,6 @@ import static org.royllo.test.TapdData.UNKNOWN_ROYLLO_COIN_ASSET_ID;
 import static org.royllo.test.TapdData.UNKNOWN_ROYLLO_COIN_FROM_TEST;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("ProofService tests")
 public class ProofServiceTest extends TestWithMockServers {
 

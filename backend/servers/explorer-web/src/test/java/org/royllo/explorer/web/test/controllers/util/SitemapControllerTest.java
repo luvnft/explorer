@@ -3,6 +3,7 @@ package org.royllo.explorer.web.test.controllers.util;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.royllo.explorer.web.test.util.BaseWebTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,10 +24,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("Sitemap controller tests")
+@DirtiesContext
 @AutoConfigureMockMvc
-public class SitemapControllerTest {
+public class SitemapControllerTest extends BaseWebTest {
 
     @Autowired
     MockMvc mockMvc;

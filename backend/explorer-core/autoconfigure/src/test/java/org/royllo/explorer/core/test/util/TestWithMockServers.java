@@ -13,7 +13,6 @@ import org.royllo.test.mempool.GetTransactionValueResponse;
 import org.royllo.test.mempool.TransactionValue;
 import org.royllo.test.tapd.asset.AssetValue;
 import org.royllo.test.tapd.asset.DecodedProofValueResponse;
-import org.springframework.test.annotation.DirtiesContext;
 
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
@@ -34,7 +33,6 @@ import static org.mockserver.integration.ClientAndServer.startClientAndServer;
  * Utility classes for tests.
  */
 @SuppressWarnings("SpellCheckingInspection")
-@DirtiesContext
 public class TestWithMockServers extends BaseTest {
 
     /** Mempool server port. */

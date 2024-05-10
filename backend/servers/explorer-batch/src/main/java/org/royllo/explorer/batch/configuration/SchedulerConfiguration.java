@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 /**
- * Scheduler.
+ * Scheduler configuration.
  */
 @Profile("!scheduler-disabled")
 @Configuration

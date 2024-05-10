@@ -10,7 +10,6 @@ import org.royllo.explorer.core.service.user.UserService;
 import org.royllo.explorer.core.test.util.TestWithMockServers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -27,7 +26,6 @@ import static org.royllo.explorer.core.util.enums.UserRole.ADMINISTRATOR;
 import static org.royllo.explorer.core.util.enums.UserRole.USER;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("UserService tests")
 public class UserServiceTest extends TestWithMockServers {
 

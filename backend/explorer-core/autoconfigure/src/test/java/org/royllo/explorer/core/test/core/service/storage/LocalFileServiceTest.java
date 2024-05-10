@@ -9,7 +9,6 @@ import org.royllo.explorer.core.provider.storage.LocalFileServiceImplementation;
 import org.royllo.explorer.core.test.util.TestWithMockServers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 
 import java.io.IOException;
 
@@ -23,7 +22,6 @@ import static org.royllo.test.TapdData.ROYLLO_COIN_ASSET_ID;
 import static org.royllo.test.TapdData.ROYLLO_NFT_ASSET_ID;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("LocalFileService tests")
 public class LocalFileServiceTest extends TestWithMockServers {
 

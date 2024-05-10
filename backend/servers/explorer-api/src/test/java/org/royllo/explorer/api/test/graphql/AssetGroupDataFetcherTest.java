@@ -12,7 +12,6 @@ import org.royllo.explorer.api.graphql.generated.types.AssetGroup;
 import org.royllo.test.tapd.asset.DecodedProofValueResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,7 +20,6 @@ import static org.royllo.explorer.core.util.constants.AnonymousUserConstants.ANO
 import static org.royllo.test.TapdData.UNLIMITED_ROYLLO_COIN_1_FROM_TEST;
 
 @SpringBootTest
-@DirtiesContext
 @DisplayName("AssetGroupDataFetcher tests")
 public class AssetGroupDataFetcherTest {
 
