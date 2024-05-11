@@ -5,6 +5,7 @@ import com.google.common.jimfs.Jimfs;
 import io.undertow.Undertow;
 import io.undertow.server.handlers.resource.PathResourceManager;
 import io.undertow.server.handlers.resource.ResourceHandler;
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.NonNull;
 import org.apache.commons.codec.DecoderException;
@@ -95,12 +96,17 @@ public class LocalFileServiceImplementation extends BaseProvider implements Cont
                 .addHttpListener(WEB_SERVER_PORT, WEB_SERVER_HOST)  // Set port and host.
                 .setHandler(new ResourceHandler(resourceManager))   // Set the handler to serve files.
                 .build();
+    }
+
+    @PostConstruct
+    @SuppressWarnings("checkstyle:DesignForExtension")
+    public void postConstruct() throws Exception {
         webServer.start();
     }
 
     @PreDestroy
     @SuppressWarnings("checkstyle:DesignForExtension")
-    public void onDestroy() throws Exception {
+    public void preDestroy() throws Exception {
         webServer.stop();
         fileSystem.close();
     }

@@ -19,8 +19,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @DisplayName("Analytics - No analytics tests")
-@AutoConfigureMockMvc
 @DirtiesContext
+@AutoConfigureMockMvc
 @TestPropertySource(properties = {"royllo.explorer.analytics.piwik.trackingId="})
 public class NoAnalyticsTest extends BaseWebTest {
 
