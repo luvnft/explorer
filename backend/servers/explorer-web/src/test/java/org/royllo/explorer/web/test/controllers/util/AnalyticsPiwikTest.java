@@ -17,8 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@DisplayName("Analytics - Piwik tests")
 @DirtiesContext
+@DisplayName("Analytics - Piwik tests")
 @AutoConfigureMockMvc
 @TestPropertySource(properties = {"royllo.explorer.analytics.piwik.trackingId=00000000-0000-0000-0000-000000000001"})
 public class AnalyticsPiwikTest extends BaseWebTest {

@@ -7,6 +7,7 @@ import org.royllo.explorer.core.provider.lightning.DatabaseK1Manager;
 import org.royllo.explorer.core.repository.util.K1ValueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.tbk.lnurl.auth.K1;
 import org.tbk.lnurl.simple.auth.SimpleK1;
 
@@ -19,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@DirtiesContext
 @DisplayName("DatabaseK1Manager tests")
 public class DatabaseK1ManagerTest {
 

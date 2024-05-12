@@ -13,6 +13,7 @@ import org.royllo.explorer.api.graphql.generated.types.AssetState;
 import org.royllo.explorer.api.graphql.generated.types.AssetStatePage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,6 +23,7 @@ import static org.royllo.test.TapdData.TRICKY_ROYLLO_COIN_ASSET_ID;
 import static org.royllo.test.TapdData.TRICKY_ROYLLO_COIN_FROM_TEST;
 
 @SpringBootTest
+@DirtiesContext
 @DisplayName("AssetStateDataFetcher tests")
 public class AssetStateDataFetcherTest {
 

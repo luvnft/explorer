@@ -9,6 +9,7 @@ import org.royllo.explorer.core.repository.request.RequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.annotation.DirtiesContext;
 
 import javax.sql.DataSource;
 import java.util.Optional;
@@ -24,6 +25,7 @@ import static org.royllo.explorer.core.util.enums.RequestStatus.OPENED;
 import static org.royllo.explorer.core.util.enums.RequestStatus.SUCCESS;
 
 @SpringBootTest
+@DirtiesContext
 @DisplayName("RequestRepository tests")
 public class RequestRepositoryTest {
 

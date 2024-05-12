@@ -24,8 +24,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@DisplayName("Sitemap controller tests")
 @DirtiesContext
+@DisplayName("Sitemap controller tests")
 @AutoConfigureMockMvc
 public class SitemapControllerTest extends BaseWebTest {
 

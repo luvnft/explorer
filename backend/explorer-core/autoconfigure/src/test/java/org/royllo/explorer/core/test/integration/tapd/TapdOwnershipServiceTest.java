@@ -6,6 +6,7 @@ import org.royllo.explorer.core.provider.tapd.TapdService;
 import org.royllo.test.TapdData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.royllo.test.TapdData.UNLIMITED_ROYLLO_COIN_1_FROM_TEST;
 
 @SpringBootTest(properties = {"tapd.api.base-url=https://testnet.universe.royllo.org:8089"})
+@DirtiesContext
 @DisplayName("TAPD ownership service test")
 public class TapdOwnershipServiceTest {
 
