@@ -37,9 +37,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-/**
- * S3 test.
- */
 @SpringBootTest
 @DirtiesContext
 @DisplayName("S3 service tests")
