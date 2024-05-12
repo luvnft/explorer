@@ -100,8 +100,12 @@ public class LocalFileServiceImplementation extends BaseProvider implements Cont
 
     @PostConstruct
     @SuppressWarnings("checkstyle:DesignForExtension")
-    public void postConstruct() throws Exception {
-        webServer.start();
+    public void postConstruct() {
+        try {
+            webServer.start();
+        } catch (Exception e) {
+            logger.error("Error starting web server: {}", e.getMessage());
+        }
     }
 
     @PreDestroy

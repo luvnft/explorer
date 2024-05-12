@@ -64,7 +64,7 @@
 
         <!-- ======================================================================================================= -->
         <!-- Project libraries -->
-        <spring.version>3.2.4</spring.version>
+        <spring.version>3.2.5</spring.version>
 
         <graphql-dgs-platform-dependencies.version>8.5.5</graphql-dgs-platform-dependencies.version>
         <graphql-dgs-codegen-core.version>6.1.5</graphql-dgs-codegen-core.version>
@@ -182,7 +182,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.4</version>
+        <version>3.2.5</version>
         <relativePath/>
     </parent>
     <!-- =========================================================================================================== -->
